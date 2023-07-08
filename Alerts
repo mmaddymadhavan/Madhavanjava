@@ -1,0 +1,33 @@
+package alerts;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class Alerts {
+
+	@Test
+	public static void Alert() throws InterruptedException
+	{
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://letcode.in/alert");
+		//accept
+		driver.findElement(By.xpath("//button[@id='accept']")).click();
+		driver.switchTo().alert().accept();
+		//dismiss
+		driver.findElement(By.xpath("//button[@id='confirm']")).click();
+		org.openqa.selenium.Alert Alerttest =driver.switchTo().alert();
+		Alerttest.accept();
+		//
+		driver.findElement(By.xpath("//button[@id='prompt']")).click();
+		driver.switchTo().alert();
+		Alerttest.sendKeys("Madhavan test");
+		Alerttest.accept();
+		
+		
+		//
+	
+		
+		
+		}
+}
