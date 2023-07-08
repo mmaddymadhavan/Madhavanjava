@@ -1,0 +1,36 @@
+package Frame;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class frame {
+
+
+	@Test
+	public void Aframe()
+	{
+		ChromeDriver driver =  new ChromeDriver();
+		driver.get("https://letcode.in/frame");
+		//5.Switch ParentFrame()====Moving from the Nested frame to ParentFrame
+		//6.witch defaultContent()====Moving from the Nested frame to Mainframe
+			
+	    //1.driver.switchTo().frame(0); ====>Frame Index
+		//2.driver.switchTo().frame("firstFr"); ====>Frame name
+		//3.driver.switchTo().frame(webexample);====> Frame web element
+		WebElement webexample = driver.findElement(By.xpath("//iframe[@src='frameUI']"));
+		driver.switchTo().frame(webexample);
+		driver.findElement(By.name("fname")).sendKeys("Madhavan");
+		driver.findElement(By.name("lname")).sendKeys("mmadhavan848@gmail.com");
+		driver.switchTo().frame(1);
+		driver.findElement(By.name("email")).sendKeys("manoj@gmail.com");
+		//Get backing to Main frame 
+		driver.switchTo().defaultContent();
+		driver.findElement(By.xpath("//a[contains(text(),'Watch tutorial')]")).click();
+		driver.findElement(By.className("ytp-title-link yt-uix-sessionlink")).click();
+
+
+
+	}
+}
