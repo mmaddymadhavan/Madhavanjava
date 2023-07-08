@@ -1,0 +1,151 @@
+package Basictestng;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class annotations2 {
+
+	@Test 
+	public void A() 
+	{
+	WebDriverManager.chromedriver().setup();
+	ChromeDriver driver = new ChromeDriver();
+	driver.get("https://www.amazon.in/");
+	driver.manage().window().maximize();
+	System.out.println("Dummy");
+	
+	}
+	//1
+	@AfterSuite
+	public void AS() 
+	{
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.amazon.in/");
+		driver.manage().window().maximize();
+		WebElement Product= driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+		Product.sendKeys("Iphone");
+		Product.sendKeys(Keys.ENTER);
+		 System.out.println("Iphone");
+		
+		
+	}
+    //2
+	@AfterTest
+	public void BM()
+	{
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.amazon.in/");
+		driver.manage().window().maximize();
+		WebElement Product= driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+		Product.sendKeys("Oneplus");
+		Product.sendKeys(Keys.ENTER);
+		System.out.println("Oneplus");
+		
+	}
+	//3
+	@AfterClass
+	public void ACC()
+	{
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.amazon.in/");
+		driver.manage().window().maximize();
+		WebElement Product= driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+		Product.sendKeys("Samsung");
+		Product.sendKeys(Keys.ENTER);
+		System.out.println("Samsung");
+	}
+	//4
+	@AfterMethod
+	public void AM()
+	
+	{
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.amazon.in/");
+		driver.manage().window().maximize();
+		WebElement Product= driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+		Product.sendKeys("Oppo");
+		Product.sendKeys(Keys.ENTER);
+		System.out.println("Oppo");
+	}
+	//5
+	@BeforeMethod
+	public void BMM()
+	
+	{
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.amazon.in/");
+		driver.manage().window().maximize();
+		WebElement Product= driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+		Product.sendKeys("Redmi");
+		Product.sendKeys(Keys.ENTER);
+		System.out.println("Redmi");
+		
+	}
+	//6
+    @BeforeClass	
+   public void BC()
+	
+	{
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.amazon.in/");
+		driver.manage().window().maximize();
+		WebElement Product= driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+		Product.sendKeys("lenova");
+		Product.sendKeys(Keys.ENTER);
+		System.out.println("lenova");
+	}
+    //7
+    @BeforeTest
+    public void BT()
+ 	
+ 	{
+ 		WebDriverManager.chromedriver().setup();
+ 		ChromeDriver driver = new ChromeDriver();
+ 		driver.get("https://www.amazon.in/");
+ 		driver.manage().window().maximize();
+ 		WebElement Product= driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+ 		Product.sendKeys("Micromax");
+ 		Product.sendKeys(Keys.ENTER);
+ 		System.out.println("Micromax");
+ 		
+ 	}
+    //8
+    @BeforeSuite	
+    public void BS()
+ 	
+ 	{
+ 		WebDriverManager.chromedriver().setup();
+ 		ChromeDriver driver = new ChromeDriver();
+ 		driver.get("https://www.amazon.in/");
+ 		driver.manage().window().maximize();
+ 		WebElement Product= driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+ 		Product.sendKeys("Nokia");
+ 		Product.sendKeys(Keys.ENTER);
+ 		System.out.println("Nokia");
+ 	}
+	}
+
+
+	
+
+
+
